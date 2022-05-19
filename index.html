@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Piedra, Papel, Tijera</title>
+	<style>
+      *{
+		  padding: 0%;
+		  margin: 0;
+		  font-family: sans-serif;
+	  }
+
+         .container{
+			 width: 100%;
+			 height: 100vh;
+			 display: flex;
+			 flex-direction: column;
+			 align-items: center;
+			 justify-content: center;
+			 background-image: linear-gradient(rgb(207, 255, 253) , rgb(255, 255, 255));
+		 }
+        #boton{
+			background-color: rgb(0, 255, 208);
+			color: rgb(0, 0, 0);
+			border: none;
+			border-radius: 5px;
+			width: 150px;
+			height: 40px;
+			font-size: 15px;
+			border: 1px solid black;
+			font-weight: bold;
+			
+		}
+@-webkit-keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+            transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+            transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+        #ganaspierdes{
+			width: 250px;
+			height: 60px;
+			font-size: 45px;
+			color: rgb(0, 0, 0);
+			border: none;
+			border-radius: 5px;
+			margin-top: 20px;
+			padding: 5px;
+			background-color: rgb(249, 249, 249);
+			
+		}
+		#maquina{
+			margin-top: 5px;
+			background-color: rgba(0, 0, 0, 0.961);
+			border: none;
+			width: 200px;
+			height: 100px;
+			text-align: center;
+			border-radius: 5px;
+			color: rgb(255, 255, 255);
+			font-size: 30px;
+			text-transform: uppercase;
+		}
+        .input{
+			width: 200px;
+			height: 50px;
+			margin: 20px;
+		}
+
+		#opcion{
+			background-color: rgba(255, 60, 0, 0.961);
+			border: none;
+			width: 200px;
+			height: 60px;
+			text-align: center;
+			border-radius: 5px;
+			color: rgb(255, 255, 255);
+			font-size: 20px;
+			text-transform: uppercase;
+			border: 1px black solid;
+			margin-top: 10px;
+            -webkit-animation: bounce-in-top 1.1s both 0.7s;
+	        animation: bounce-in-top 1.1s both 0.7s;
+		}
+
+		#opciones{
+			background-color: rgb(242, 242, 242);
+			border: none;
+			margin: 20px;
+			height: 100px;
+			color: black;
+		}
+
+		h2{
+			margin-top: 25px;
+			color: rgb(0, 0, 0);
+			font-size: 18px;
+		}
+
+		h1{
+               color: rgb(255, 64, 0);
+			   font-size: 25px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+
+
+		      <h1>Elige una opcion</h1>
+	             <select id="opcion">
+	             	<option id="opciones"  value="piedra">Piedra</option>
+	             	<option id="opciones" value="papel">Papel</option>
+	             	<option id="opciones" value="tijera">Tijera</option>
+	             </select>
+	             <br>
+	             <br>
+	             <button id="boton" onclick="comprobar()">JUGAR</button>
+				 <h2>MAQUINA</h2>
+	             <input type="button" class="inputtt" id="maquina">
+				 <input type="button" class="inputt" id="ganaspierdes">
+			
+               <div>
+			  </div>
+			</div>
+
+
+
+
+	<script>
+		function comprobar(){
+			var opcionElegida = opcion.value;
+			var opcionMaquina = eleccionMaquina();
+
+			//AQUÍ EMPIEZA TU CÓDIGO
+			
+			var resultado;
+
+
+			if(opcionElegida == "piedra" && opcionMaquina == "papel"){
+				document.getElementById("ganaspierdes").value = "PERDISTE"
+			    document.getElementById("maquina").value = "PAPEL";
+			} else if(opcionElegida == "piedra" && opcionMaquina == "tijera"){
+				document.getElementById("ganaspierdes").value = "GANASTE"
+			    document.getElementById("maquina").value = "TIJERA";
+			} else if(opcionElegida == "papel" && opcionMaquina == "tijera"){
+				document.getElementById("ganaspierdes").value = "PERDISTE"
+			    document.getElementById("maquina").value = "TIJERA";
+			} else if(opcionElegida == "papel" && opcionMaquina == "piedra"){
+				document.getElementById("ganaspierdes").value = "GANASTE"
+			    document.getElementById("maquina").value = "PIEDRA";
+			} else if(opcionElegida == "tijera" && opcionMaquina == "piedra"){
+				document.getElementById("ganaspierdes").value = "PERDISTE"
+			    document.getElementById("maquina").value = "PIEDRA";
+			} else if(opcionElegida == "tijera" && opcionMaquina == "papel"){
+				document.getElementById("ganaspierdes").value = "GANASTE"
+			    document.getElementById("maquina").value = "PAPEL";
+			} else{
+                    document.getElementById("ganaspierdes").value = "EMPATE"
+			        document.getElementById("maquina").value = opcionElegida
+			} 
+
+			
+
+		}
+
+
+
+		/*ESTA PARTE LA PUEDES IGNORAR*/
+		function eleccionMaquina(){
+			let opciones = ["piedra","papel","tijera"];
+			return opciones[Math.floor(Math.random() * 3)];
+		}
+	</script>
+</body>
+</html>
