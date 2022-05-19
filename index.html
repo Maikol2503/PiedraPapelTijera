@@ -184,33 +184,33 @@
 			//AQUÍ EMPIEZA TU CÓDIGO
 			
 			var resultado;
-
+            var maquina;
 
 			if(opcionElegida == "piedra" && opcionMaquina == "papel"){
-				document.getElementById("ganaspierdes").value = "PERDISTE"
-			    document.getElementById("maquina").value = "PAPEL";
+				resultado = "PERDISTE";
+			    maquina = "PAPEL";
 			} else if(opcionElegida == "piedra" && opcionMaquina == "tijera"){
-				document.getElementById("ganaspierdes").value = "GANASTE"
-			    document.getElementById("maquina").value = "TIJERA";
+				resultado = "GANASTE"
+			    maquina = "TIJERA";
 			} else if(opcionElegida == "papel" && opcionMaquina == "tijera"){
-				document.getElementById("ganaspierdes").value = "PERDISTE"
-			    document.getElementById("maquina").value = "TIJERA";
+				resultado = "PERDISTE"
+			    maquina = "TIJERA";
 			} else if(opcionElegida == "papel" && opcionMaquina == "piedra"){
-				document.getElementById("ganaspierdes").value = "GANASTE"
-			    document.getElementById("maquina").value = "PIEDRA";
+				resultado = "GANASTE"
+			    maquina = "PIEDRA";
 			} else if(opcionElegida == "tijera" && opcionMaquina == "piedra"){
-				document.getElementById("ganaspierdes").value = "PERDISTE"
-			    document.getElementById("maquina").value = "PIEDRA";
+				resultado = "PERDISTE"
+			    maquina = "PIEDRA";
 			} else if(opcionElegida == "tijera" && opcionMaquina == "papel"){
-				document.getElementById("ganaspierdes").value = "GANASTE"
-			    document.getElementById("maquina").value = "PAPEL";
+				resultado = "GANASTE"
+			    maquina = "PAPEL";
 			} else{
-                    document.getElementById("ganaspierdes").value = "EMPATE"
-			        document.getElementById("maquina").value = opcionElegida
+                    resultado = "EMPATEe"
+			        maquina = opcionElegida
 			} 
 
-			
-
+			document.getElementById("ganaspierdes").value = resultado;
+            document.getElementById("maquina").value = maquina
 		}
 
 
